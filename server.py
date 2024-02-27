@@ -21,7 +21,7 @@ from PIL import Image
 import os
 from urllib.parse import urlparse
 
-import train
+import train as train
 
 fileDir = os.path.dirname(os.path.abspath(__file__))
 rootDir = os.path.join(fileDir, '.')

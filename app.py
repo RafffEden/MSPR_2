@@ -1,6 +1,6 @@
 import csv
 import os
-import static.train as train
+import train as train
 from PIL import Image 
 from flask import Flask, request, render_template, jsonify, send_from_directory
 
