@@ -9,7 +9,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Load image information from CSV file
 image_info = {}
 
-with open('image_info.csv', newline='') as csvfile:
+with open('static/image_info.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         image_info[row['filename']] = row['description']

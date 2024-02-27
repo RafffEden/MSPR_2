@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Image</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" id="logo">
-        <img src="{{ url_for('static', filename='header_image.jpg') }}" alt="Header Image">
+        <img src="static/Design/logo_blanc.png" alt="Logo" id="logo">
+        <img src="static/Desgin/wildaware-high-resolution-color-logo.png" alt="Header Image">
     </header>
 
     <form id="upload-form" enctype="multipart/form-data">
@@ -22,6 +22,6 @@
         <div id="description"></div>
     </div>
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="static.script.js"></script>
 </body>
 </html>
