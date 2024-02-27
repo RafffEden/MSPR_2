@@ -64,6 +64,15 @@ Les classes:
 
 ![alt text](accuracy-resnet.png "Accuracy en fonction des époques")
 
+
+
+2 réseaux testés : resnet : 24 575 588 paramètres et mobilenet : 600 000 paramètres
+resnet a de meilleures performances mais est plus lourd.
+le deuxième est plus léger, il est compatible avec un téléphone, sa précision est moins bonne
+
+
+
+
 ## Frontend 3'
 
 3 : appli frontend ( UI, prediction locale ...)

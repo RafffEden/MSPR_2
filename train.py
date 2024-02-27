@@ -157,7 +157,7 @@ class Vegetable :
     self.model_name = model_name
     EKO()
     self.load(model_name, disp=False)
-    self.__modele = self.test()
+    self.__modele = self.test(measure=False)
     pass
 
   def get_model(self) :
@@ -260,7 +260,7 @@ class Vegetable :
     return list(self.class_to_idx.keys())
     
   
-  def test(self, epoch=193, measure=True, disp=False, test_dir=None) :
+  def test(self, epoch=298, measure=True, disp=False, test_dir=None) :
     """
     measure : faire le calcul de l'accuracy
     """
@@ -432,7 +432,7 @@ def train(gd = "/content/gdrive/MyDrive/data", train_dir=None) :
     v.train()
 
 
-def test(gd = "/content/gdrive/MyDrive/data", train_dir=None, test_dir=None, model_name ="resnet50", epoch=193) :
+def test(gd = "/content/gdrive/MyDrive/data", train_dir=None, test_dir=None, model_name ="resnet50", epoch=298) :
   #v = Vegetable(gd, use_gpu=True, train_dir=train_dir)
   #v.test(46)
   v = Vegetable(gd, model_name=model_name, train_dir=train_dir, use_gpu=True)
