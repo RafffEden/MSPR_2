@@ -38,6 +38,7 @@ dataset = "Vegetable Images"
 dataset = "FruitsVegetables"
 
 class Vegetable :
+  
   def mobilenetf(nmb_classes) : 
     model = mobilenet_v2(weights="DEFAULT")
 
@@ -156,6 +157,7 @@ class Vegetable :
     self.model_name = model_name
     EKO()
     self.load(model_name, disp=False)
+    self.__modele = self.test()
     pass
 
   def get_model(self) :
@@ -319,9 +321,9 @@ class Vegetable :
     EKOX(accuracy)
     return accuracy
     
-  def predict(self, model, image_to_predict) :
+  def predict(self, image_to_predict) :
     #EKOX(image_to_predict)
-
+    model = self.__modele
     i = self.inference_transform(image_to_predict)[None, ...]
     #EKOX(i.shape)
     images = i.to(self.device)
