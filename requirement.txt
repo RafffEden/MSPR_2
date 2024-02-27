@@ -2,3 +2,5 @@ Flask
 Pandas
 torch
 torchvision
+utillc
+matplotlib
