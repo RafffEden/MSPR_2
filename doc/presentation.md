@@ -64,6 +64,12 @@ Les classes:
 
 ![alt text](accuracy-resnet.png "Accuracy en fonction des époques")
 
+
+
+2 réseaux testés : resnet : 24 575 588 paramètres et mobilenet : 600 000 paramètres
+
+
+
 ## Frontend 3'
 
 3 : appli frontend ( UI, prediction locale ...)
