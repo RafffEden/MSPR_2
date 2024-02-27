@@ -1,4 +1,5 @@
 import csv
+import os
 from flask import Flask, request, render_template, jsonify, send_from_directory
 
 app = Flask(__name__)
@@ -9,10 +10,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Load image information from CSV file
 image_info = {}
 
-with open('static/image_info.csv', newline='') as csvfile:
-    reader = csv.DictReader(csvfile)
+with open('static/infos_especes.csv', newline='') as csvfile:
+    reader = csv.DictReader(csvfile,delimiter=";")
     for row in reader:
-        image_info[row['filename']] = row['description']
+        image_info[row['Espece']] = row['Description']
 
 @app.route('/')
 def index():
@@ -39,4 +40,4 @@ def get_image_info():
     return jsonify(image_info)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
