@@ -33,7 +33,7 @@ run :
 	source ${HOME}/scripts/.bashrc; spy; pyenv; USER=LOUIS PORT=8094 make server_nuc
 
 server_nuc :
-	python -c 'import server; server.go("/media/usb-seagate2/data/vegetables")'
+	python -c 'import server; server.go("/home/louis/data/vegetables")'
 
 commit_push :
 	git config --global user.email 'louis.chevallier@gmail.com'

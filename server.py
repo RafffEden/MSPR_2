@@ -27,7 +27,7 @@ fileDir = os.path.dirname(os.path.abspath(__file__))
 rootDir = os.path.join(fileDir, '.')
 EKOX(rootDir)
 
-port = 8080
+port = 8090
 if "PORT" in os.environ :
     port = int(os.environ["PORT"])
 EKOX(port)
@@ -53,7 +53,7 @@ config = {
       'server.socket_host' : '0.0.0.0', #192.168.1.5', #'127.0.0.1',
       'server.socket_port' : port,
       'server.thread_pool' : 1,
-      'log.screen': False,
+      'log.screen': True,
       'log.error_file': './error.log',
       'log.access_file': './access.log'
   },
@@ -74,7 +74,7 @@ class App:
         v = self.vegetable = train.Vegetable(gd, use_gpu=True, model_name="resnet50", train_dir=train_dir)
         self.model = model = v.test(measure=False, disp=False, epoch=298)
         model.eval()
-        v.predict(model, Image.open('brocoli.jpg'))
+        #v.predict(model, Image.open('brocoli.jpg'))
         EKOX(self.get_next_image_num())
         os.makedirs( os.path.join(".", "tests"), exist_ok=True)
         self.requests = 0
