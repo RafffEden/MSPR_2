@@ -62,7 +62,7 @@ Les classes:
 ![alt text](exemples.png "Exemple d''exemple d'images d'entrainement")
 
 
-![alt text](accuracy-resnet.png "Accuracy en fonction des époques")
+![alt text](accuracy_resnet.png "Accuracy en fonction des époques")
 
 
 
