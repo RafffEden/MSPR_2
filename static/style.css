@@ -1,0 +1,74 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: green;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Logo styles */
+#logo {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    width: 100px; /* Adjust width as needed */
+    height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+
+/* Form styles */
+#upload-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Image information styles */
+#image-info {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #f5f5f5; /* Light gray background color */
+    padding: 20px; /* Add padding */
+}
+
+#image-container {
+    background-color: white; /* White background color for image container */
+    padding: 10px; /* Add padding */
+    border: 1px solid #ddd; /* Add a border */
+    border-radius: 5px; /* Add border radius */
+    margin-bottom: 10px; /* Add margin */
+}
+
+#image-container img {
+    max-width: 100%;
+    max-height: 300px;
+    margin-bottom: 10px;
+}
+
+#description {
+    font-style: italic;
+}
+
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    /* Hide logo on smaller screens */
+    #logo {
+        display: none;
+    }
+}
