@@ -24,8 +24,8 @@ image_info = {}
 #         v.predict(model, Image.open('brocoli.jpg'))
 #         os.makedirs( os.path.join(".", "tests"), exist_ok=True)
 #         self.requests = 0
-vegetable = train.Vegetable(gd= DATA_PATH,use_gpu= False,model_name= "resnet50")
-modele = vegetable.test(measure=False, disp=False, epoch=298)
+# vegetable = train.Vegetable(gd= DATA_PATH,use_gpu= False,model_name= "resnet50")
+# modele = vegetable.test(measure=False, disp=False, epoch=298)
 
 with open('static/infos_especes.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile,delimiter=";")
