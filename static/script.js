@@ -24,7 +24,7 @@ function uploadImage() {
         imageInfoDiv.style.display = 'block';
         
         // Fetch information from CSV
-        fetch('/image_info')
+        fetch('/static/info_especes.csv')
             .then(response => response.text()) // Fetch as text
             .then(text => {
                 // Split text into lines
