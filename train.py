@@ -177,16 +177,18 @@ class Vegetable :
     t = self.t
     _, batch_size = t[self.model_name]
 
-
+    """
     ds_train = ImageFolder(os.path.join(root, 'train'),
                            transform=self.train_transform)
     ds_test = ImageFolder(os.path.join(root, 'test'),
                           transform=self.valid_transform)
-    ds_valid = ImageFolder(os.path.join(root, 'validation'),
-                           transform=self.valid_transform)
     ds_valid2 = ImageFolder(os.path.join(root, 'validation2'),
                             transform=self.valid_transform)
-    self.class_to_idx = ds_train.class_to_idx
+
+    """
+    ds_valid = ImageFolder(os.path.join(root, 'validation'),
+                           transform=self.valid_transform)
+    self.class_to_idx = ds_valid.class_to_idx
     self.idx_to_class = dict([ (v,k) for k,v in self.class_to_idx.items()])
 
     classes = list(self.class_to_idx.keys())
@@ -214,6 +216,9 @@ class Vegetable :
       plt.show()
 
     EKOT("building loader ..")
+
+    train_loader, test_loader, valid_loadr, valid_loadr2 = [None] * 4
+    """
     train_loader_visu = torch.utils.data.DataLoader(ds_train, 
             batch_size=batch_size*4, shuffle=True,
             num_workers=4, pin_memory=True)
@@ -223,20 +228,22 @@ class Vegetable :
     test_loader = torch.utils.data.DataLoader(ds_test, 
             batch_size=batch_size, shuffle=True,
             num_workers=4, pin_memory=True)
-    valid_loadr = torch.utils.data.DataLoader(ds_valid, 
+    valid_loadr2 = torch.utils.data.DataLoader(ds_valid2, 
             batch_size=batch_size, shuffle=True,
             num_workers=4, pin_memory=True)
-    valid_loadr2 = torch.utils.data.DataLoader(ds_valid2, 
+"""
+
+    valid_loadr = torch.utils.data.DataLoader(ds_valid, 
             batch_size=batch_size, shuffle=True,
             num_workers=4, pin_memory=True)
 
 
     # get some random training images
-    dataiter = iter(train_loader_visu)
-    images, labels = next(dataiter)
-    EKO()
     #EKOX(str(labels))
     if disp :
+      dataiter = iter(train_loader_visu)
+      images, labels = next(dataiter)
+      EKO()
       # show images
       EKO()
       print(' '.join(f'{self.idx_to_class[int(labels[j])]:5s}' for j in range(BATCH_SIZE)))      
