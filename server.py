@@ -152,7 +152,7 @@ class App:
             self.out.write(e)
             EKOT("written")
             EKOT("predicting")
-            label, _, prob = self.vegetable.predict(self.model, Image.open(fn))
+            label, _, prob = self.vegetable.predict(Image.open(fn))
             EKOX(self.vegetable.idx_to_class[label])
             ans =  json.dumps({"status" : "ok",
                                "requests" : int(self.requests),
