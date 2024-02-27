@@ -19,14 +19,46 @@ Application
 
 Les classes:
 
-|    Légumes | Fruits |
-| ---        | ---    |
+|    Fruits     | Légumes |
+| ---           | ---    |
+|apple|             beetroot                        |
+|banana|            bell pepper       |
+|grapes|            cabbage           |
+|kiwi|              capsicum          |
+|lemon|             carrot            |
+|mango|             cauliflower       |
+|orange|            chilli pepper     |
+|pear|              corn              |
+|pineapple|         cucumber          |
+|pomegranate|       eggplant          |
+||                  garlic            |
+||                  ginger            |
+||                  jalepeno          |
+||                  lettuce           |
+||                  onion             |
+||                  paprika           |
+||                  peas              |
+||                  potato            |
+||                  raddish           |
+||                  soy beans         |
+||                  spinach           |
+||                  sweetcorn         |
+||                  sweetpotato       |
+||                  tomato            |
+||                  turnip            |
+||                  watermelon        |
+
+
+
+
+
+
 
 
 
 ![alt text](exemples.png "Exemple d''exemple d'images d'entrainement")
 
-![alt text](accuracy.png "Accuracy en fonction des époques")
+![alt text](accuracy-resnet.png "Accuracy en fonction des époques")
 
 ## Frontend 3'
 
