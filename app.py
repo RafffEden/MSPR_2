@@ -47,7 +47,6 @@ def upload_image():
     filename = 'uploaded_image.png'
     img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename) 
     file.save(img_path)
-    print("----------")
     label, _ ,prob = vegetable.predict(Image.open(img_path))
     return jsonify({'image_url': f'/uploads/{filename}','predicted Class': f'{label}','predicted prob':f'{prob}'  })
 
@@ -58,9 +57,11 @@ def uploaded_file(filename):
 @app.route('/image_info/<prediction>')
 def get_image_info(prediction):
     # Fetch information based on the prediction
-    if prediction in info:
-        EKOX(info["Espece" == prediction])
-        return jsonify(info["Espece" == prediction])
+    if (info["Espece"] == prediction).any() :
+        EKOX(info[info["Espece"] == prediction])
+        json_info = info[info["Espece"] == prediction].to_dict(orient = "records")
+        EKOX(json_info)
+        return jsonify(json_info[0])
     else:
         return jsonify({'error': 'Prediction not found'}), 404
 
