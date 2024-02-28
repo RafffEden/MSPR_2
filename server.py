@@ -183,3 +183,6 @@ def go(gd = "/content/gdrive/MyDrive/data", train_dir=None, port = 8090) :
     EKOT("server running")
     cherrypy.quickstart(app, '/', config)
     EKOT("end server", n=LOG)
+
+if __name__ == '__main__' : 
+    go('/data/MSPR_2_data_docker', port = 8090 )

@@ -15,7 +15,6 @@ RUN pip install torch torchvision torchaudio
 
 # Création d'un répertoire de travail dans l'image
 WORKDIR /app
-
 # Copie de votre code source dans le répertoire de travail de l'image
 # COPY . /app
 RUN git clone https://github.com/RafffEden/MSPR_2.git /app
@@ -24,5 +23,8 @@ RUN pip install -r requirement.txt
 RUN pip install cherrypy
 
 ENV USER Tom
+
+WORKDIR /data
+COPY ./MSPR_2_data_docker .
 # Commande par défaut pour exécuter votre code au démarrage (à ajuster selon votre configuration)
 CMD ["python", "server.py"]
