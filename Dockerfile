@@ -16,7 +16,8 @@ WORKDIR /app
 # Copie de votre code source dans le répertoire de travail de l'image
 # COPY . /app
 RUN git clone https://github.com/RafffEden/MSPR_2.git /app
-RUN git pull
+
+RUN git pull 
 RUN pip install -r requirement.txt
 
 ENV USER Tom
