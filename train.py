@@ -21,8 +21,10 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
+from dotenv import dotenv_values
 
 print_everything()
+config = dotenv_values(".env")
 EKOX(torch.__version__)
 
 BATCH_SIZE=32
@@ -30,6 +32,8 @@ EKO()
 
 SIZE = (224, 224)
 SIZE2 = (340, 340)
+
+CLASS_LIST = config['DATA_CLASS']
 
 #SIZE = (340, 340)
 #SIZE2 = (448, 448)
@@ -217,7 +221,7 @@ class Vegetable :
 
     EKOT("building loader ..")
 
-    train_loader, test_loader, valid_loadr, valid_loadr2 = [None] * 4
+    # train_loader, test_loader, valid_loadr, valid_loadr2 = [None] * 4
     """
     train_loader_visu = torch.utils.data.DataLoader(ds_train, 
             batch_size=batch_size*4, shuffle=True,
