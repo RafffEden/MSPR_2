@@ -1,7 +1,7 @@
 # Utilisation de l'image de base avec Python
 FROM python:3.8-slim
 
-EXPOSE 5000
+EXPOSE 8080
 # Mise à jour des paquets et installation des dépendances nécessaires
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -23,4 +23,4 @@ RUN git clone https://github.com/RafffEden/MSPR_2.git /app
 
 RUN pip install -r requirement.txt
 # Commande par défaut pour exécuter votre code au démarrage (à ajuster selon votre configuration)
-CMD ["python", "app.py"]
+CMD ["python", "server.py"]

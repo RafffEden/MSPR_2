@@ -27,37 +27,12 @@ fileDir = os.path.dirname(os.path.abspath(__file__))
 rootDir = os.path.join(fileDir, '.')
 EKOX(rootDir)
 
-port = 8090
-if "PORT" in os.environ :
-    port = int(os.environ["PORT"])
-EKOX(port)
-
 OK="OK"
 FAILED="FAILED"
 STATUS="status"
 REASON="reason"
 no_path = "no_path"
 
-config = {
-  '/' : {
-      'tools.staticdir.on': True,
-      'tools.staticdir.dir': rootDir,
-#      'tools.staticdir.dir': '/mnt/hd2/users/louis/dev/git/three.js/examples/test',
-
-    },
-  'global' : {
-      'server.ssl_module' : 'builtin',
-      'server.ssl_certificate' : "cert.pem",
-      'server.ssl_private_key' : "privkey.pem",
-      
-      'server.socket_host' : 'localhost', #'0.0.0.0' '192.168.1.5', #'127.0.0.1',
-      'server.socket_port' : port,
-      'server.thread_pool' : 1,
-      'log.screen': True,
-      'log.error_file': './error.log',
-      'log.access_file': './access.log'
-  },
-}
 
 dirphotos = "/tmp/photos_%s" % os.environ["USER"]
 tmpphotos = "/tmp/photos_tmp_%s" % os.environ["USER"]
@@ -181,7 +156,27 @@ config2 = {
     "gitinfo" : "info"
 }
 
-def go(gd = "/content/gdrive/MyDrive/data", train_dir=None) :
+def go(gd = "/content/gdrive/MyDrive/data", train_dir=None, port = 8090) :
+    config = {
+    '/' : {
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': rootDir,
+    #      'tools.staticdir.dir': '/mnt/hd2/users/louis/dev/git/three.js/examples/test',
+
+        },
+    'global' : {
+        'server.ssl_module' : 'builtin',
+        'server.ssl_certificate' : "cert.pem",
+        'server.ssl_private_key' : "privkey.pem",
+        
+        'server.socket_host' : 'localhost', #'0.0.0.0' '192.168.1.5', #'127.0.0.1',
+        'server.socket_port' : port,
+        'server.thread_pool' : 1,
+        'log.screen': True,
+        'log.error_file': './error.log',
+        'log.access_file': './access.log'
+    },
+}
     app = App(gd, train_dir)
     cherrypy.log.error_log.propagate = False
     cherrypy.log.access_log.propagate = False
