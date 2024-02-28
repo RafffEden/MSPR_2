@@ -1,5 +1,5 @@
 from utillc import *
-import os, glob, sys
+import os, glob, sys, ast
 import argparse
 import time
 import torchvision
@@ -33,7 +33,7 @@ EKO()
 SIZE = (224, 224)
 SIZE2 = (340, 340)
 
-CLASS_LIST = config['DATA_CLASS']
+CLASS_LIST = eval(config['DATA_CLASS'])
 
 #SIZE = (340, 340)
 #SIZE2 = (448, 448)
@@ -190,10 +190,14 @@ class Vegetable :
                             transform=self.valid_transform)
 
     """
-    ds_valid = ImageFolder(os.path.join(root, 'validation'),
-                           transform=self.valid_transform)
-    self.class_to_idx = ds_valid.class_to_idx
-    # EKOX(self.class_to_idx)
+    # ds_valid = ImageFolder(os.path.join(root, 'validation'),
+    #                        transform=self.valid_transform)
+    EKOX(type(CLASS_LIST))
+    self.class_to_idx = {}
+    for i in range(len(CLASS_LIST)):
+      self.class_to_idx[CLASS_LIST[i]] = i
+    # self.class_to_idx =  dict([(value,index) for index, value in enumerate(CLASS_LIST)])
+    EKOX(self.class_to_idx)
     self.idx_to_class = dict([ (v,k) for k,v in self.class_to_idx.items()])
 
     classes = list(self.class_to_idx.keys())
@@ -238,9 +242,9 @@ class Vegetable :
             num_workers=4, pin_memory=True)
 """
 
-    valid_loadr = torch.utils.data.DataLoader(ds_valid, 
-            batch_size=batch_size, shuffle=True,
-            num_workers=4, pin_memory=True)
+    # valid_loadr = torch.utils.data.DataLoader(ds_valid, 
+    #         batch_size=batch_size, shuffle=True,
+    #         num_workers=4, pin_memory=True)
 
 
     # get some random training images
@@ -259,7 +263,7 @@ class Vegetable :
     #EKOX(torchscan.summary(model), (3, SIZE, SIZE))
 
     
-    return model, valid_loadr, batch_size, classifier
+    return model, batch_size, classifier
 
   def read(self, epoch, model) :
     path_to_read = os.path.join(self.gd, "models", "vegetables_%s_%s_%03d.cpt" % (dataset, self.model_name, epoch))
@@ -277,7 +281,7 @@ class Vegetable :
     measure : faire le calcul de l'accuracy
     """
     EKO()
-    model, valid_loader, _, classifier = self.load(disp=disp)
+    model, _, classifier = self.load(disp=disp)
 
     
     EKO()
@@ -291,8 +295,8 @@ class Vegetable :
         lab, _, p = self.predict(model, Image.open(i))
         EKOX((i, lab, self.classes[lab], p))
       
-    if measure :
-      EKOT("valid"); self.measure(valid_loader, model)
+    # if measure :
+    #   EKOT("valid"); self.measure(valid_loader, model)
     return model
   
   def measure(self, loader, model) :
