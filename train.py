@@ -197,8 +197,8 @@ class Vegetable :
     for i in range(len(CLASS_LIST)):
       self.class_to_idx[CLASS_LIST[i]] = i
     # self.class_to_idx =  dict([(value,index) for index, value in enumerate(CLASS_LIST)])
-    EKOX(self.class_to_idx)
     self.idx_to_class = dict([ (v,k) for k,v in self.class_to_idx.items()])
+    EKOX(self.idx_to_class)
 
     classes = list(self.class_to_idx.keys())
     EKOX(classes)
@@ -356,8 +356,8 @@ class Vegetable :
     #EKOX(outputs.data.shape)
     #EKOX(outputs.data[0, label])
     #EKOX(label)
-    #EKOX(self.idx_to_class[label])
-    return label, outputs.data.cpu().numpy(), prob
+    EKOX(self.idx_to_class[label])
+    return self.idx_to_class[label], outputs.data.cpu().numpy(), prob
     
   def train(self) :
     gd = self.gd

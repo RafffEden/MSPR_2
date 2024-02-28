@@ -1,13 +1,16 @@
 import csv
+import pandas as pd
 import os
+from utillc import *
 import train as train
 from PIL import Image 
 from flask import Flask, request, render_template, jsonify, send_from_directory
+from dotenv import dotenv_values
 
 app = Flask(__name__)
-
-DATA_PATH = "C:/Data"
-UPLOAD_FOLDER = 'uploads'
+config = dotenv_values(".env")
+DATA_PATH = config["DATA_PATH"]
+UPLOAD_FOLDER = config["UPLOAD_FOLDER"]
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # Load image information from CSV file
@@ -27,10 +30,7 @@ image_info = {}
 vegetable = train.Vegetable(gd= DATA_PATH,use_gpu= False,model_name= "resnet50")
 # modele = vegetable.test(measure=False, disp=False, epoch=298)
 
-with open('static/infos_especes.csv', newline='') as csvfile:
-    reader = csv.DictReader(csvfile,delimiter=";")
-    for row in reader:
-        image_info[row['Espece']] = row['Description']
+info = pd.read_csv("static/infos_especes.csv",delimiter=";")
 
 @app.route('/')
 def index():
@@ -45,16 +45,24 @@ def upload_image():
         return jsonify({'error': 'No selected file'}), 400
     # Save the uploaded file
     filename = 'uploaded_image.png'
-    file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    return jsonify({'image_url': f'/uploads/{filename}'})
+    img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename) 
+    file.save(img_path)
+    print("----------")
+    label, _ ,prob = vegetable.predict(Image.open(img_path))
+    return jsonify({'image_url': f'/uploads/{filename}','predicted Class': f'{label}','predicted prob':f'{prob}'  })
 
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
-@app.route('/image_info')
-def get_image_info():
-    return jsonify(image_info)
+@app.route('/image_info/<prediction>')
+def get_image_info(prediction):
+    # Fetch information based on the prediction
+    if prediction in info:
+        EKOX(info["Espece" == prediction])
+        return jsonify(info["Espece" == prediction])
+    else:
+        return jsonify({'error': 'Prediction not found'}), 404
 
 if __name__ == '__main__':
     app.run(debug=False)

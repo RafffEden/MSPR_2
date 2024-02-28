@@ -1,4 +1,4 @@
-function uploadImage() {
+function PredictImage() {
     var formData = new FormData();
     var fileInput = document.getElementById('file-input');
     var file = fileInput.files[0];
@@ -22,20 +22,31 @@ function uploadImage() {
         // Show image info
         var imageInfoDiv = document.getElementById('image-info');
         imageInfoDiv.style.display = 'block';
+
         
         // Fetch information from CSV
-        fetch('/static/info_especes.csv')
-            .then(response => response.text()) // Fetch as text
-            .then(text => {
-                // Split text into lines
-                var lines = text.split('\n');
-                // Select the second line (after the header)
-                var secondLine = lines[1];
-                // Display the second line as description
-                var descriptionElement = document.getElementById('description');
-                descriptionElement.textContent = secondLine;
-            })
-            .catch(error => console.error('Error:', error));
+        if ('predicted Class' in data) {
+            var prediction = data['predicted Class'];
+            // Fetch information from CSV based on the predicted class
+            fetch(`/image_info/${prediction}`)
+                .then(response => response.json())
+                .then(info => {
+                    var infoTableBody = document.getElementById('info-table-body');
+                    var newRow = infoTableBody.insertRow();
+                    newRow.innerHTML = `
+                        <td>${prediction}</td>
+                        <td>${info['Espece']}</td>
+                        <td>${info['Description']}</td>
+                        <td>${info['Nom latin']}</td>
+                        <td>${info['Famille']}</td>
+                        <td>${info['Taille']}</td>
+                        <td>${info['Région']}</td>
+                        <td>${info['Habitat']}</td>
+                        <td>${info['Fun fact']}</td>
+                    `;
+                })
+                .catch(error => console.error('Error:', error));
+            }
     })
     .catch(error => {
         console.error('Error:', error);
