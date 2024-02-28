@@ -259,7 +259,7 @@ class Vegetable :
     #EKOX(torchscan.summary(model), (3, SIZE, SIZE))
 
     
-    return model, train_loader, test_loader, valid_loadr, valid_loadr2, batch_size, classifier
+    return model, valid_loadr, batch_size, classifier
 
   def read(self, epoch, model) :
     path_to_read = os.path.join(self.gd, "models", "vegetables_%s_%s_%03d.cpt" % (dataset, self.model_name, epoch))
@@ -277,7 +277,7 @@ class Vegetable :
     measure : faire le calcul de l'accuracy
     """
     EKO()
-    model, train_loader, test_loader, valid_loader, valid_loader2, _, classifier = self.load(disp=disp)
+    model, valid_loader, _, classifier = self.load(disp=disp)
 
     
     EKO()
@@ -292,10 +292,7 @@ class Vegetable :
         EKOX((i, lab, self.classes[lab], p))
       
     if measure :
-      EKOT("train"); self.measure(train_loader, model)
-      EKOT("test"); self.measure(test_loader, model)
       EKOT("valid"); self.measure(valid_loader, model)
-      EKO("valid2"); self.measure(valid_loader2, model)      
     return model
   
   def measure(self, loader, model) :
