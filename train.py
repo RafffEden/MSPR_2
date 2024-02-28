@@ -193,6 +193,7 @@ class Vegetable :
     ds_valid = ImageFolder(os.path.join(root, 'validation'),
                            transform=self.valid_transform)
     self.class_to_idx = ds_valid.class_to_idx
+    # EKOX(self.class_to_idx)
     self.idx_to_class = dict([ (v,k) for k,v in self.class_to_idx.items()])
 
     classes = list(self.class_to_idx.keys())
@@ -245,7 +246,7 @@ class Vegetable :
     # get some random training images
     #EKOX(str(labels))
     if disp :
-      dataiter = iter(train_loader_visu)
+      dataiter = iter(valid_loadr)
       images, labels = next(dataiter)
       EKO()
       # show images
