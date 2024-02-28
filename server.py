@@ -26,7 +26,7 @@ import train as train
 fileDir = os.path.dirname(os.path.abspath(__file__))
 rootDir = os.path.join(fileDir, '.')
 EKOX(rootDir)
-EKOX("coucou")
+EKOX("salut")
 OK="OK"
 FAILED="FAILED"
 STATUS="status"
