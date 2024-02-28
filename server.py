@@ -169,7 +169,7 @@ def go(gd = "/content/gdrive/MyDrive/data", train_dir=None, port = 8090) :
 #        'server.ssl_certificate' : "cert.pem",
 #        'server.ssl_private_key' : "privkey.pem",
         
-        'server.socket_host' : 'localhost', #'0.0.0.0' '192.168.1.5', #'127.0.0.1',
+        'server.socket_host' : '127.0.0.1',#'localhost', #'0.0.0.0' '192.168.1.5', ,
         'server.socket_port' : port,
         'server.thread_pool' : 1,
         'log.screen': True,
