@@ -178,8 +178,8 @@ def go(gd = "/content/gdrive/MyDrive/data", train_dir=None, port = 8090) :
     },
 }
     app = App(gd, train_dir)
-    cherrypy.log.error_log.propagate = False
-    cherrypy.log.access_log.propagate = False
+    cherrypy.log.error_log.propagate = True
+    cherrypy.log.access_log.propagate = True
     EKOT("server running")
     cherrypy.quickstart(app, '/', config)
     EKOT("end server", n=LOG)
