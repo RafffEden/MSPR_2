@@ -13,7 +13,6 @@ RUN pip install --upgrade pip
 
 RUN pip install torch torchvision torchaudio
 
-
 # Création d'un répertoire de travail dans l'image
 WORKDIR /app
 
@@ -22,5 +21,8 @@ WORKDIR /app
 RUN git clone https://github.com/RafffEden/MSPR_2.git /app
 
 RUN pip install -r requirement.txt
+RUN pip install cherrypy
+
+ENV USER Tom
 # Commande par défaut pour exécuter votre code au démarrage (à ajuster selon votre configuration)
 CMD ["python", "server.py"]
