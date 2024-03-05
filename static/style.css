@@ -14,6 +14,15 @@ header {
     position: relative;
 }
 
+.center-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
 /* Logo styles */
 #logo {
     position: absolute;
@@ -36,6 +45,11 @@ img {
 #upload-form {
     text-align: center;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 /* Image information styles */

@@ -5,4 +5,3 @@ torchvision
 utillc
 matplotlib
 python-dotenv
-cherrypy

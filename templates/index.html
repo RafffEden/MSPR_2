@@ -11,11 +11,15 @@
         <img src="static/Design/logo_blanc.png" alt="Logo" id="logo">
         <img src="static/Design/wildaware-high-resolution-color-logo.png" alt="Header Image">
     </header>
-
-    <form id="upload-form" enctype="multipart/form-data">
-        <input type="file" id="file-input" name="file">
-        <button type="button" onclick="PredictImage()">Predict</button>
-    </form>
+    <div class="center-column">
+        <div id="camera-preview"></div> 
+        <button type="button" onclick="startCamera()">Start Camera</button> 
+        <button type="button" onclick="Capture()">Predict Picture</button>
+        <form id="upload-form" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="file">
+            <button type="button" onclick="sendFileInput()">Predict File</button>
+        </form>
+    </div>
     <div id="image-info" style="display: none;">
         <h2>Image Information</h2>
         <div id="image-container"></div>

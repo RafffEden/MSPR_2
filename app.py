@@ -2,7 +2,7 @@ import csv
 import pandas as pd
 import os
 from utillc import *
-import train as train
+import static.train as train
 from PIL import Image 
 from flask import Flask, request, render_template, jsonify, send_from_directory
 from dotenv import dotenv_values
@@ -12,6 +12,8 @@ config = dotenv_values(".env")
 DATA_PATH = config["DATA_PATH"]
 UPLOAD_FOLDER = config["UPLOAD_FOLDER"]
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+SSL_CERT = config["CERT_CLIENT"]
+SSL_KEY = config["CERT_SECRET"]
 
 # Load image information from CSV file
 image_info = {}
@@ -66,4 +68,4 @@ def get_image_info(prediction):
         return jsonify({'error': 'Prediction not found'}), 404
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(host='0.0.0.0',port= 443,debug=False,ssl_context= (SSL_CERT,SSL_KEY))
