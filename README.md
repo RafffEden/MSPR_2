@@ -29,9 +29,6 @@ Cette application permettra en outre de recueillir des données précises sur le
 
 - L'utilisateur peut prendre une photo afin d'obtenir une prédiction sur sa classe
 - L'utilisateur peut ensuite obtenir des informations complémentaires en fonction de la classe de l'image
-  
-- L'utilisateur peut également lancer le script de l'ETL afin d'extraire les données du modèles.
-
 - 
 
 ## Point sur le jeu de données
