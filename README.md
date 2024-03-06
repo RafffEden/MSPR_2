@@ -4,7 +4,7 @@ MSPR TPRE21 E61 Créer un modèle de données d'une solution I.A en utilisant de
 ## 🎯 Contexte & cahier des charges
 Dans le cadre de la formation Développeur IA de l'École EPSI à Rennes, il nous est demandé de réaliser des mises en situation professionnelle dans lesquelles on nous demande en équipe de réaliser des projets. 
 
-Pour ce projet, il nous ait demandé de réaliser un processus ETL répondant au besoin d'une solution IA 
+Pour ce projet, il nous ait demandé de produire une application exploitant un modèle de machine learning.
 
 #### Situation
 WildLens est une association française engagée dans la protection animale dans les régions sauvages. Elle collecte des fonds pour financer ses actions et mène des campagnes de sensibilisation en forêt pour informer le public sur les enjeux de la conservation de la faune sauvage.
@@ -15,10 +15,14 @@ Cette application permettra en outre de recueillir des données précises sur le
 
 #### Cahier des charges 
 
-- Préparation d'un jeu de données d'entrainement-validation-test 
-- Modélisation et création des bases de données 
-- Création du script/requête de récuperation des infos complémentaires d'une espèce
-- Création du premier script/requête d'écriture des données recueillies
+- un back-end conteneurisé
+- un front-end
+- Présence des 3 fonctionnalités attendues :
+      ~ Classification d’une photo
+      ~ Affichage des informations sur l’espèce reconnue
+      ~ Recueil des données de prise de photo
+- Travail sur un outil de versioning
+- Livraison d’une documentation
 
 ## 🤼‍♀️ Cas d'utilisation 
 
