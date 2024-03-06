@@ -24,7 +24,7 @@ RUN pip install -r requirement.txt
 RUN apk add --no-cache openssl
 
 # Set the working directory
-WORKDIR /certs
+WORKDIR /Cert
 
 # Generate SSL certificate and key
 RUN openssl req -x509 -nodes -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 \
