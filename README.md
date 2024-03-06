@@ -56,58 +56,47 @@ Ce jeu de donnée nous permet d'entrainer notre modèle de manière plus fiable 
 L'arborescence du projet ce compose comme suit :
 ```bash
 .
-├── Api.py
-├── Data
-│   ├── data.csv
-│   └── data_no_labeled.csv
-├── Design
-│   ├── logo_blanc.png
-│   ├── logo_vert.png
-│   └── wildaware-high-resolution-color-logo.png
-├── Mammiferes
-│   ├── Castor
-│   │   └── images
-│   ├── Chat
-│   │   └── images
-│   ├── Chien
-│   │   └── images
-│   ├── Coyote
-│   │   └── images
-│   ├── Ecureuil
-│   │   └── images
-│   ├── Lapin
-│   │   └── images
-│   ├── Loup
-│   │   └── images
-│   ├── Lynx
-│   │   └── images
-│   ├── Ours
-│   │   └── images
-│   ├── Puma
-│   │   └── images
-│   ├── Rat
-│   │   └── images
-│   ├── Raton laveur
-│   │   └── images
-│   └── Renard
-│       └── images
+├── Diagramme_conception.png
+├── Dockerfile
 ├── README.md
-├── Script_ETL.py
-├── Upload
-│   └── uploaded_image.png
-├── infos_especes.csv
-└── requirement.txt
+├── app.py
+├── common
+│   ├── image-loader.js
+│   ├── imagenet.js
+│   └── ndarray-browser-min.js
+├── doc
+│   ├── accuracy_resnet.png
+│   └── example.png
+├── requirement.txt
+├── static
+│   ├── Cert
+│   │   ├── cert.pem
+│   │   └── key.pem
+│   ├── Design
+│   │   ├── logo_blanc.png
+│   │   ├── logo_vert.png
+│   │   └── wildaware-high-resolution-color-logo.png
+│   ├── __pycache__
+│   │   └── train.cpython-312.pyc
+│   ├── infos_especes.csv
+│   ├── script.js
+│   ├── style.css
+│   └── train.py
+├── templates
+│   └── index.html
+└── uploads
+    └── uploaded_image.png
 ```
 ## ✅ Pré-requis 
 Afin que ce projet fonctionne voici mes listes des pre-requis necessaire: 
 - Python 3.10 minimum 
-- flask
-- pandas
+- Flask
+- Pandas
+- torch
+- torchvision
 - utillc
+- matplotlib
 - python-dotenv
-- opencv-python
-- scikit-image
-- scikit-learn
 
 Vous trouverez plus bas comment obtenir les pre-requis manquants au bon fonctionnement.
 ## ⚙️ Installation
@@ -130,11 +119,11 @@ Cette ligne vous permet de vous rendre dans le dossier *Documents*.
 
 Rendez-vous donc dans le dossier de votre choix et entrez la commande :
 ```bash
-git clone https://github.com/RafffEden/MSPR_TPRE521.git
+git clone https://github.com/RafffEden/MSPR_TPRE523.git
 ```
 Cette commande va télécharger le projet dans votre dossier ensuite tapé :
 ```bash
-cd MSPR_TPRE521
+cd MSPR_TPRE523
 ```
 Pour accéder au dossier du projet.
 
@@ -174,6 +163,17 @@ Normalement, l'ensemble des paquets requis pour le projet devrait s'installer.
 Si ce n'est pas le cas voici un lien qui peut vous aidez :
 https://pip.pypa.io/en/stable/installation/
 
+
+## Execution du projet 
+
+### Execution avec Docker 
+Lancer le docker que vous avez build avec le dockerfile du projet pour cela ouvrez un terminal et tapper : 
+
+```bash 
+docker run [nom_image]
+``` 
+avec nom_image le nom que vous avez tapper dans le docker build.
+Pour accéder à l'application, entrez dans le naviagteur l'ip du docker pour cela aller sur Docker Desktop et chercher votre image 
 
 ## 🧑‍💻 Auteur(s)
 TARLET Tom

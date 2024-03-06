@@ -27,4 +27,4 @@ COPY ./MSPR_2_data_docker .
 WORKDIR /app
 
 # Commande par défaut pour exécuter votre code au démarrage (à ajuster selon votre configuration)
-CMD ["python", "server.py"]
+CMD ["python", "app.py"]
