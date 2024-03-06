@@ -34,7 +34,7 @@ Cette application permettra en outre de recueillir des données précises sur le
 
 ## 📊 Diagrammes de conception
 
-![Diagramme de conception](/images_readme/Diagramme_conception.png "Diagramme de conception")
+![Diagramme de conception](/Diagramme_conception.png "Diagramme de conception")
 
 - Les images du jeu de données d'entraînement sont d'abord traitées avec un script python, utilisant la librairie pandas, afin d'obtenir un dataset ( Data.csv ) exploitable par le modèle de machine learning. Les données sont ensuite séparées en jeux de test et d'entrainement pour alimenter le modèle.
 
