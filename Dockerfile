@@ -21,7 +21,7 @@ RUN git pull
 RUN pip install -r requirement.txt
 
 # Install OpenSSL
-RUN apk add --no-cache openssl
+RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
 WORKDIR /Cert
