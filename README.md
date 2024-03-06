@@ -50,6 +50,8 @@ Ce jeu de donnée nous permet d'entrainer notre modèle de manière plus fiable 
 
 - L'API peut quand à elle récupérer la nouvelle image envoyée par l'utilisateur pour en faire une prédiction grâce au modèle et donner le résultat à l'utilisateur, accompagné des informations complémentaires liées à la prédiction issues de infos_espèces.CSV.
 
+- L'utilisateur envoi quand à lui une nouvelle image à prédire grâce à l'application front end.
+
 ## 📂 Arborescence du projet
 L'arborescence du projet ce compose comme suit :
 ```bash
