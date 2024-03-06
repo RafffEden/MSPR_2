@@ -1,5 +1,6 @@
-# Titre du projet
-MSPR TPRE21 E61 Créer un modèle de données d'une solution I.A en utilisant des méthodes de Data sciences
+# MSPR TPRE523
+
+Produire et maintenir une solution I.A
 
 ## 🎯 Contexte & cahier des charges
 Dans le cadre de la formation Développeur IA de l'École EPSI à Rennes, il nous est demandé de réaliser des mises en situation professionnelle dans lesquelles on nous demande en équipe de réaliser des projets. 
