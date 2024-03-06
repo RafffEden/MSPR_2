@@ -19,6 +19,7 @@ RUN git clone https://github.com/RafffEden/MSPR_TPRE523.git /app
 
 RUN git pull 
 RUN pip install -r requirement.txt
+RUN openssl req -x509 -newkey rsa:4096 -keyout Cert/key.pem -out Cert/cert.pem -days 365
 
 ENV USER Tom
 

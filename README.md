@@ -161,7 +161,14 @@ Si ce n'est pas le cas voici un lien qui peut vous aidez :
 https://pip.pypa.io/en/stable/installation/
 
 ### Générer des certificats 
+#### Sous Windows
 
+#### Sous Linux 
+Afin que l'application fonctionne, il est necessaire de créer des certificats pour cela entrer dans console BASH la commande suivant au niveau du projet :
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout Cert/key.pem -out Cert/cert.pem -days 365
+```
+Suivez les instructions demander et retener bien le PEM pass phrase elle vous sera demander à chaque execution.
 
 ## Execution du projet 
 
