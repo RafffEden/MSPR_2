@@ -86,7 +86,7 @@ L'arborescence du projet ce compose comme suit :
 ```
 ## ✅ Pré-requis 
 Afin que ce projet fonctionne voici mes listes des pre-requis necessaire: 
-- Python 3.10 minimum 
+- Python 3.8 minimum 
 - Flask
 - Pandas
 - torch
