@@ -162,6 +162,27 @@ https://pip.pypa.io/en/stable/installation/
 
 ### Générer des certificats 
 #### Sous Windows
+- Installer OpenSSL : Si vous n'avez pas encore installé OpenSSL sur votre machine Windows, vous pouvez le télécharger depuis le site web d'OpenSSL (https://www.openssl.org/) ou utiliser un gestionnaire de packages comme Chocolatey (choco install openssl).
+
+- Ouvrir l'invite de commandes : Appuyez sur Win + R, tapez cmd, puis appuyez sur Entrée pour ouvrir l'invite de commandes.
+
+- Naviguer vers le répertoire d'installation d'OpenSSL (optionnel) : Si OpenSSL n'est pas dans le PATH de votre système, vous devrez naviguer vers le répertoire d'installation d'OpenSSL en utilisant la commande cd. Par exemple, si OpenSSL est installé dans C:\OpenSSL-Win64\, vous pouvez y accéder en utilisant :
+
+```bash
+cd C:\OpenSSL-Win64\
+```
+
+- Exécuter la commande OpenSSL : Une fois dans le répertoire d'installation d'OpenSSL ou si OpenSSL est dans le PATH de votre système, vous pouvez exécuter la commande openssl req pour générer le certificat et la clé privée. Voici la commande :
+
+```bash
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365
+```
+
+- Cette commande générera une clé privée RSA de 4096 bits (key.pem) et un certificat auto-signé (cert.pem) valable pendant 365 jours.
+
+- Fournir les informations : OpenSSL vous demandera de fournir certaines informations pour générer le certificat. Vous pouvez remplir les informations requises.
+
+- Génération du certificat et de la clé : Après avoir fourni les informations nécessaires, OpenSSL générera les fichiers de certificat (cert.pem) et de clé privée (key.pem) dans le répertoire actuel (ou dans le répertoire spécifié si vous avez navigué vers un emplacement différent).
 
 #### Sous Linux 
 Afin que l'application fonctionne, il est necessaire de créer des certificats pour cela entrer dans console BASH la commande suivant au niveau du projet :
