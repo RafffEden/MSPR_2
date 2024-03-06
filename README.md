@@ -37,7 +37,9 @@ Cette application permettra en outre de recueillir des données précises sur le
 ## Point sur le jeu de données
 
 le jeu de données et les classes à prédire ont été modifié par rapport au cahier des charges. En effet le jeu de données sur les empreintes d'animaux n'était pas assez fournis et les images n'était pas formatées ( présence de watermark ).
+
 Notre modèle n'était donc pas bien entraîné, ce pourquoi nous avons décidé de changer pour un jeu de données de fruits et légumes disponible ici : https://www.kaggle.com/datasets/kritikseth/fruit-and-vegetable-image-recognition
+
 Ce jeu de donnée nous permet d'entrainer notre modèle de manière plus fiable et donc d'obtenir une prédiction plus satisfaisante. 
 
 ## 📊 Diagrammes de conception
