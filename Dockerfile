@@ -24,7 +24,7 @@ RUN pip install -r requirement.txt
 RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 # Set the working directory
-WORKDIR /Cert
+WORKDIR /app/Cert
 
 # Generate SSL certificate and key
 RUN openssl req -x509 -nodes -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 \
