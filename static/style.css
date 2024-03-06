@@ -81,8 +81,34 @@ img {
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
+    /* Responsive styles */
     /* Hide logo on smaller screens */
     #logo {
         display: none;
     }
+    /* Adjust header */
+    header img {
+        width: 100%;
+    }
+
+    /* Center column */
+    .center-column {
+        text-align: center;
+    }
+
+    /* File input */
+    #file-input {
+        margin-bottom: 10px;
+    }
+
+    /* Camera preview */
+    #camera-preview {
+        margin-bottom: 10px;
+    }
+
+    /* Buttons */
+    button {
+        width: 100%;
+    }
+}
 }

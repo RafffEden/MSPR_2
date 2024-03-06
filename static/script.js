@@ -1,5 +1,6 @@
 function startCamera() {
-    navigator.mediaDevices.getUserMedia({ video: true })
+    var constraints = { video: { facingMode: 'environment' } };
+    navigator.mediaDevices.getUserMedia(constraints)
         .then(function(stream) {
             // Create a video element to display the camera feed
             var videoElement = document.createElement('video');
