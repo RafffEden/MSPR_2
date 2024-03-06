@@ -160,6 +160,8 @@ Normalement, l'ensemble des paquets requis pour le projet devrait s'installer.
 Si ce n'est pas le cas voici un lien qui peut vous aidez :
 https://pip.pypa.io/en/stable/installation/
 
+### Générer des certificats 
+
 
 ## Execution du projet 
 
@@ -170,7 +172,25 @@ Lancer le docker que vous avez build avec le dockerfile du projet pour cela ouvr
 docker run [nom_image]
 ``` 
 avec nom_image le nom que vous avez tapper dans le docker build.
-Pour accéder à l'application, entrez dans le naviagteur l'ip du docker pour cela aller sur Docker Desktop et chercher votre image 
+Pour accéder à l'application, entrez dans le naviagteur l'ip du docker pour cela aller sur Docker Desktop et chercher votre image comme ceci : 
+
+![Capture Docker](/Diagramme_conception.png "Capture d'écran Docker Desktop")
+
+Vous trouverez la ligne *Running on [addresse IP]* et il vous suffit de taper cette addresse dans votre navigateur et d'autoriser le site si jamais votre navigateur vous bloque à l'ouverture 
+
+### Exectution avec Python 
+Pour lancer directement avec python sans passer par docker, il vous faudra avoir votre environnement prêt avec les prérequis plus haut et tapper la commande dans le terminal au niveau du projet :
+
+```bash
+python app.py
+```
+
+l'application devrait ce lancer et vous demander un PEM pass phrase qui est le mots de passe que vous avez utilisé quand vous avez génére les certificats puis l'application vous dit :
+
+![Capture terminal](/capture_terminal.png "Capture d'écran du terminal d'execution")
+
+maintenant, tappez dans votre navigateur l'addresse en 192.168 afin d'accéder à l'application.
+
 
 ## 🧑‍💻 Auteur(s)
 TARLET Tom
