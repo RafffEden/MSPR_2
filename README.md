@@ -202,7 +202,7 @@ docker run [nom_image]
 avec nom_image le nom que vous avez tapper dans le docker build.
 Pour accéder à l'application, entrez dans le naviagteur l'ip du docker pour cela aller sur Docker Desktop et chercher votre image comme ceci : 
 
-![Capture Docker](/Diagramme_conception.png "Capture d'écran Docker Desktop")
+![Capture Docker](/capture_terminal.png.png "Capture d'écran Docker Desktop")
 
 Vous trouverez la ligne *Running on [addresse IP]* et il vous suffit de taper cette addresse dans votre navigateur et d'autoriser le site si jamais votre navigateur vous bloque à l'ouverture 
 
