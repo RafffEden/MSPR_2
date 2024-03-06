@@ -19,9 +19,9 @@ Cette application permettra en outre de recueillir des données précises sur le
 - un back-end conteneurisé
 - un front-end
 - Présence des 3 fonctionnalités attendues :
-      . Classification d’une photo
-      . Affichage des informations sur l’espèce reconnue
-      . Recueil des données de prise de photo
+      - Classification d’une photo
+      - Affichage des informations sur l’espèce reconnue
+      - Recueil des données de prise de photo
 - Travail sur un outil de versioning
 - Livraison d’une documentation
 
