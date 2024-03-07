@@ -159,6 +159,18 @@ Normalement, l'ensemble des paquets requis pour le projet devrait s'installer.
 Si ce n'est pas le cas voici un lien qui peut vous aidez :
 https://pip.pypa.io/en/stable/installation/
 
+### Pour Docker
+
+#### Sous Linux
+
+installer docker desktop pour linux via ce lien : https://docs.docker.com/desktop/install/linux-install/
+
+#### Sous Windows
+
+installer d'abord WSL via ce lien : https://learn.microsoft.com/fr-fr/windows/wsl/install
+
+installer ensuite docker desktop via ce lien : https://docs.docker.com/desktop/install/windows-install/
+
 ### Générer des certificats 
 #### Sous Windows
 - Installer OpenSSL : Si vous n'avez pas encore installé OpenSSL sur votre machine Windows, vous pouvez le télécharger depuis le site web d'OpenSSL (https://www.openssl.org/) ou utiliser un gestionnaire de packages comme Chocolatey (choco install openssl).
@@ -201,7 +213,7 @@ docker run [nom_image]
 avec nom_image le nom que vous avez tapper dans le docker build.
 Pour accéder à l'application, entrez dans le naviagteur l'ip du docker pour cela aller sur Docker Desktop et chercher votre image comme ceci : 
 
-![Capture Docker](/capture_terminal.png.png "Capture d'écran Docker Desktop")
+![Capture Docker](/capture_terminal.png "Capture d'écran Docker Desktop")
 
 Vous trouverez la ligne *Running on [addresse IP]* et il vous suffit de taper cette addresse dans votre navigateur et d'autoriser le site si jamais votre navigateur vous bloque à l'ouverture 
 
