@@ -29,7 +29,6 @@ Cette application permettra en outre de recueillir des données précises sur le
 
 - L'utilisateur peut prendre une photo afin d'obtenir une prédiction sur sa classe
 - L'utilisateur peut ensuite obtenir des informations complémentaires en fonction de la classe de l'image
-- 
 
 ## Point sur le jeu de données
 
@@ -213,9 +212,7 @@ Pour lancer directement avec python sans passer par docker, il vous faudra avoir
 python app.py
 ```
 
-l'application devrait ce lancer et vous demander un PEM pass phrase qui est le mots de passe que vous avez utilisé quand vous avez génére les certificats puis l'application vous dit :
-
-![Capture terminal](/capture_terminal.png "Capture d'écran du terminal d'execution")
+l'application devrait se lancer et vous demander un PEM pass phrase qui est le mots de passe que vous avez utilisé quand vous avez génére les certificats puis l'application vous dit :
 
 maintenant, tappez dans votre navigateur l'addresse en 192.168 afin d'accéder à l'application.
 
